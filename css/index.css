@@ -1,0 +1,1410 @@
+/*===================================================================*/
+/* # 0. CONFIGURAÇÕES BASE E RESET */
+/*===================================================================*/
+
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+/* Variáveis de Cor (Custom Properties) */
+:root {
+    --dark-bg: #111111;
+    --header-bg: #2e2e2e;
+    /* Fundo da header sutilmente mais claro */
+    --card-bg: #1a1a1a;
+    /* Fundo dos cards */
+    --text-color: #ffffff;
+    --purple-highlight: #6e43c8;
+    --light-gray: #aaaaaa;
+    --cta-dark: #2a2a2a;
+    --cta-button-base: #4a4a4a;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Adiciona transição suave para interações em quase todos os elementos */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Estilos Globais do Corpo */
+body {
+    background-color: var(--card-bg);
+    /* Fundo escuro geral (usando variável) */
+    color: var(--text-color);
+}
+
+/*===================================================================*/
+/* # 1. ESTILOS DO HEADER/NAVEGAÇÃO */
+/*===================================================================*/
+
+/* Container Principal do Header */
+/* ========================================================================= */
+/* # MENU MOBILE */
+/* ========================================================================= */
+.mobile-menu-toggle {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    width: 32px;
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+    /* acima de tudo */
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 4px;
+    background: var(--text-color);
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+/* Painel lateral */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 9998;
+}
+
+.mobile-nav a,
+.mobile-register {
+    font-size: 1.2em;
+}
+
+/* Quando ativo */
+.mobile-nav.active {
+    right: 0;
+}
+
+/* Garantir que a imagem hero nunca fique por cima */
+.hero-image-placeholder,
+.hero-image-area {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Garantir que o header fique sempre no topo */
+.new-header {
+    position: relative;
+    z-index: 5000;
+}
+
+
+.new-header {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+
+    /* Linha divisória sutil */
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1400px;
+    /* Alinha com o container principal do site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    /* Padding nas laterais */
+}
+
+/* Seção Esquerda (Logo e Nav) */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* Espaço entre logo e navegação */
+}
+
+.header-logo {
+    width: 40px;
+    /* Tamanho do ícone do logo */
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Transforma um logo preto em branco (útil para ícones) */
+    filter: brightness(0) invert(1);
+}
+
+/* Navegação Principal */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Espaço entre os links de navegação */
+}
+
+.nav-link {
+    color: var(--light-gray);
+    /* Cor padrão dos links */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: var(--text-color);
+    /* Cor ao passar o mouse */
+}
+
+/* Dropdown (Prices) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-toggle .arrow-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top: 5px solid var(--light-gray);
+    /* Cor da seta */
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    transition: border-top-color 0.3s ease;
+}
+
+.dropdown-toggle:hover .arrow-down {
+    border-top-color: var(--text-color);
+}
+
+.dropdown-menu {
+    display: none;
+    /* Escondido por padrão */
+    position: absolute;
+    background-color: var(--cta-dark);
+    /* Fundo do menu dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    top: 100%;
+    /* Abaixo do link pai */
+    left: 0;
+    margin-top: 10px;
+    /* Espaço entre o link e o menu */
+}
+
+.dropdown-menu a {
+    color: #cccccc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #3a3a3a;
+    color: var(--text-color);
+}
+
+/* Mostra o dropdown ao passar o mouse sobre o elemento pai */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Seção Direita (Login e Register) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-link {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: var(--text-color);
+}
+
+.register-button {
+    background-color: var(--text-color);
+    /* Fundo branco para o botão "Register now" */
+    color: var(--card-bg);
+    /* Texto escuro no botão branco */
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/*===================================================================*/
+/* # 2. LAYOUT E ESTRUTURA PRINCIPAL (GRID) */
+/*===================================================================*/
+
+/* Layout Principal (Grid) */
+.container {
+    display: grid;
+    /* Coluna 1: Conteúdo Principal (2fr), Coluna 2: Imagem/Destaque (1.2fr) */
+    grid-template-columns: 2fr 1.2fr;
+    grid-template-rows: auto auto;
+    /* Duas linhas de altura automática */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
+    /* Padding superior e lateral */
+}
+
+/* Distribuição das áreas no grid */
+.hero-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-right: 50px;
+}
+
+.hero-image-area {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.server-cards-area {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.highlight-box {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/*===================================================================*/
+/* # 3. ESTILOS DA SEÇÃO HERO (CONTEÚDO E CTA) */
+/*===================================================================*/
+
+/* Estilos do Texto Hero */
+.hero-content h1 {
+    font-size: 4em;
+    /* Levemente maior */
+    font-weight: 800;
+    /* Mais negrito */
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content .highlight {
+    color: var(--purple-highlight);
+    /* Destaca a palavra 'Minecraft' em roxo */
+    font-weight: inherit;
+}
+
+.hero-content p {
+    color: var(--light-gray);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* Barra de Chamada para Ação (CTA Bar) */
+.cta-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--cta-dark);
+    padding: 10px 10px 10px 20px;
+    border-radius: 5px;
+    max-width: 450px;
+}
+
+.cta-text {
+    flex-grow: 1;
+    color: var(--light-gray);
+    font-size: 0.9em;
+}
+
+.cta-button {
+    background-color: var(--purple-highlight);
+    /* Cor do botão Start em roxo */
+    color: var(--text-color);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cta-button:hover {
+    background-color: #8a6be6;
+    /* Roxo mais claro ao hover */
+    transform: scale(1.05);
+    /* Efeito de zoom */
+}
+
+/* Placeholder da Imagem Hero */
+.hero-image-placeholder {
+    aspect-ratio: 1 / 1;
+    /* Fundo complexo para simular o visual da imagem original */
+    background:
+        radial-gradient(circle at 60% 30%, rgba(255, 140, 0, 0.3), transparent 70%),
+        radial-gradient(circle at 40% 70%, rgba(110, 67, 200, 0.2), transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-gray);
+    font-size: 0.8em;
+    text-align: center;
+    border: 1px dashed #333;
+    /* Borda pontilhada para indicar a área */
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*===================================================================*/
+/* # 4. CARDS DE SERVIDOR (SERVER CARDS) */
+/*===================================================================*/
+
+.server-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1;
+    /* Permite que os cards ocupem o espaço disponível */
+    min-height: 180px;
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    /* Sombra para profundidade */
+    cursor: pointer;
+}
+
+.server-card:hover {
+    border-color: var(--purple-highlight);
+    transform: translateY(-5px);
+    /* Efeito de elevação */
+    box-shadow: 0 8px 20px rgba(110, 67, 200, 0.2);
+}
+
+.server-card h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.server-card p {
+    color: var(--light-gray);
+    font-size: 0.95em;
+}
+
+/*===================================================================*/
+/* # 5. CAIXA DE DESTAQUE (HIGHLIGHT BOX) */
+/*===================================================================*/
+
+.highlight-box {
+    background-color: var(--purple-highlight);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    /* Sombra mais intensa */
+}
+
+.highlight-box h3 {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.highlight-box h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+.highlight-box p {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+
+/* Lista de Ícones (Simulação de recursos) */
+.icon-list {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon-item {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.25);
+    /* Fundo mais visível */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Simulação de ícone interno */
+.icon-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-color: var(--text-color);
+    clip-path: circle(50% at 50% 50%);
+}
+
+/* CTA de Rodapé da Caixa de Destaque */
+.footer-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separador sutil */
+}
+
+.footer-cta p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.85em;
+    color: #f0f0f0;
+}
+
+.view-more-button-about {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.view-more-button-about:hover {
+    background-color: rgb(214, 214, 214)
+}
+
+/*===================================================================*/
+/* # 6. ESTILOS DO ABOUT US */
+/*===================================================================*/
+
+.about-us-section {
+    /* Reutiliza o layout Grid do container principal */
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 50px auto;
+    /* Adiciona margem vertical */
+    padding: 0 20px;
+    align-items: center;
+    /* Alinha o conteúdo verticalmente */
+}
+
+.about-content h2 {
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.about-content .lead-text {
+    color: var(--light-gray);
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.feature-list {
+    margin-bottom: 30px;
+}
+
+.feature-list p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+    /* Adiciona um toque de roxo nos marcadores */
+    list-style: none;
+    /* Remove marcadores padrão se fosse lista */
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Simula o ícone de checkmark roxo */
+.feature-list p::before {
+    content: '★';
+    /* Ou use um ícone real, como um emoji ou font-icon */
+    color: var(--purple-highlight);
+    font-size: 1.1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Reutiliza o estilo do botão CTA */
+.about-cta {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 30px;
+    /* Um pouco mais de padding */
+    transition: all 0.3s ease;
+}
+
+/* Estilo do Placeholder da Imagem (Reutiliza o estilo do Hero, mas retangular) */
+.about-image-placeholder {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+
+.about-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*===================================================================*/
+/* # 7. ESTILOS DO MOD LOGS / CHANGELOG */
+/*===================================================================*/
+
+.mod-logs-section {
+    /* Reutiliza o grid do container, garantindo 2fr 1.2fr */
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 30px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.changelog-area h3,
+.video-showcase-area h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    border-left: 4px solid var(--purple-highlight);
+    padding-left: 15px;
+}
+
+/* Estilo do Card de Log Individual */
+.log-card {
+    background-color: var(--card-bg);
+    /* Fundo igual ao corpo */
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.log-card:hover {
+    border-color: var(--purple-highlight);
+    transform: translateX(5px);
+}
+
+.log-version {
+    font-weight: 800;
+    color: var(--purple-highlight);
+    font-size: 1.1em;
+    width: 150px;
+    /* Largura fixa para alinhar as versões */
+    flex-shrink: 0;
+}
+
+.log-details {
+    flex-grow: 1;
+}
+
+.log-details p {
+    color: var(--light-gray);
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.log-date {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Estilo da Área do Vídeo */
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Padrão para vídeos (16:9) */
+    background-color: var(--cta-dark);
+    border: 3px solid var(--purple-highlight);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-placeholder .placeholder-text {
+    color: var(--light-gray);
+    font-size: 1.1em;
+}
+
+.cta-download {
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-download p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.download-button {
+    /* Reutiliza o estilo do cta-button roxo */
+    padding: 12px 30px;
+    font-size: 1em;
+}
+
+/* Estilo para o Log mais recente (opcional, mas recomendado) */
+.log-card.latest-log {
+    border-left: 5px solid var(--purple-highlight);
+    background-color: #212121;
+    /* Fundo levemente mais escuro para destaque */
+    padding-left: 15px;
+}
+
+/* Contêiner e Estilo do Botão Ver Mais */
+.view-more-container {
+    margin-top: 25px;
+    text-align: center;
+    /* Centraliza o botão */
+}
+
+.view-more-button {
+    /* Reutiliza o estilo do cta-button, mas com fundo invertido para contraste */
+    background-color: var(--cta-dark);
+    color: var(--purple-highlight);
+    border: 1px solid var(--purple-highlight);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.view-more-button:hover {
+    background-color: var(--purple-highlight);
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+/*===================================================================*/
+/* # 8. ESTILOS DA SEÇÃO DE INSTALAÇÃO (REORGANIZADO) */
+/*===================================================================*/
+
+.installation-section {
+    background-color: var(--dark-bg);
+    /* Fundo bem escuro */
+    padding: 60px 0;
+}
+
+/* O container principal desta seção agora terá 3 áreas:
+  1. Marketing/CTA (2fr) | 2. Imagem (1.2fr) na primeira linha
+  3. Passo a Passo (4fr) na segunda linha
+*/
+.installation-content-area {
+    /* Reutiliza o container padrão, mas ajustamos o grid */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    /* Configuração do Grid para 2 linhas e as 2 colunas originais (2fr e 1.2fr) */
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    grid-template-rows: auto auto;
+    /* Primeira linha auto, segunda linha auto */
+    gap: 30px;
+}
+
+/* Coluna 1 da Linha 1: Marketing e CTA */
+.relevant-info-block {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-right: 30px;
+}
+
+/* Coluna 2 da Linha 1: Imagem */
+.installation-image-area {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.image-placeholder-large {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Formato de vídeo ou imagem ampla */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Nova Linha 2 (Passo a Passo Lado a Lado, mas ocupando toda a largura na linha 2) */
+.installation-guide-full-width {
+    grid-column: 1 / 3;
+    /* Ocupa as duas colunas na linha 2 */
+    grid-row: 2 / 3;
+    padding: 30px 0;
+    border-top: 1px dashed #444;
+    /* Linha de separação */
+}
+
+/* Títulos */
+.relevant-info-block h2,
+.installation-guide-full-width h2 {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.1;
+}
+
+/* Marketing Pitch */
+.marketing-pitch {
+    color: var(--light-gray);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.marketing-pitch strong {
+    color: var(--purple-highlight);
+    font-weight: 700;
+}
+
+/* CTA Download Box (Caixa com o botão) - AGORA MINIMALISTA */
+.cta-installation-box {
+    /* REMOVIDOS: background-color: var(--cta-dark); */
+    /* REMOVIDOS: border: 1px solid var(--purple-highlight); */
+    background-color: transparent;
+    /* Torna o fundo transparente */
+    padding: 0;
+    /* Remove padding da caixa */
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cta-installation-box h3 {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Estilo do Botão Download AGORA BRANCO */
+.download-link {
+    /* Mantenha o estilo base do cta-button, mas sobrescreva a cor */
+    background-color: var(--text-color);
+    /* Fundo BRANCO */
+    color: var(--card-bg);
+    /* Texto ESCURO */
+    border: none;
+
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.download-link:hover {
+    background-color: #f0f0f0;
+    /* Um branco levemente mais escuro no hover */
+    color: #000000;
+    transform: scale(1.01);
+}
+
+/* Guia de Instalação (Lista Ordenada - Reajustada para ficar em colunas) */
+.installation-guide-full-width>p {
+    color: var(--light-gray);
+    margin-bottom: 30px;
+}
+
+.installation-steps {
+    list-style-type: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+
+    /* ORGANIZAÇÃO EM COLUNAS LADO A LADO */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.installation-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding: 15px 15px 15px 65px;
+    /* Adiciona padding para o número estilizado e conteúdo */
+    color: var(--light-gray);
+    font-size: 0.95em;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid #333;
+    height: 100%;
+    /* Garante que todos os passos tenham a mesma altura visualmente */
+}
+
+.installation-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centraliza verticalmente */
+    background-color: var(--purple-highlight);
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+/*===================================================================*/
+/* # 9. ESTILOS DO ÁLBUM DE IMAGENS */
+/*===================================================================*/
+/*
+=============================
+  1. Container e Seção
+=============================
+*/
+.mob-gallery-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-bg);
+    /* Use variáveis CSS se definidas */
+    padding: 40px 0;
+    /* Adicionado padding para respiro */
+}
+
+/* Centraliza o conteúdo e garante responsividade */
+.container_gallery {
+    /* Removido o width fixo de 1300px. Usamos max-width para responsividade. */
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+    /* Padding horizontal para telas menores */
+}
+
+.container_gallery h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.container_gallery p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+/*
+=============================
+  2. Grid (Usando CSS Grid)
+=============================
+*/
+.mob-gallery-grid {
+    width: 100%;
+    /* Ajustado para 100% e controlamos o max-width no container */
+    display: grid;
+    /* Define o número de colunas (Exemplo: 4 colunas) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    /* Aumentado um pouco o gap */
+    padding: 5px;
+    /* background-color: red; <- Removido a cor de debug */
+}
+
+/*
+=============================
+  3. Item da Galeria e Imagem
+=============================
+*/
+
+.mob-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    aspect-ratio: 1/1.5;
+    /* flex: 1; <- Removido, pois estamos usando CSS Grid */
+}
+
+.mob-gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    /* ESTADO BASE MELHORADO: Usa object-fit: cover e um leve scale para zoom.
+    Removemos a complexidade de 150% e translateX(-16.66%). */
+    object-fit: cover;
+    display: block;
+
+    /* Leve zoom e centralização inicial para o "corte" */
+    transform: scale(1.1);
+
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+    filter: brightness(0.8);
+}
+
+/*
+=============================
+  4. Efeito de Sobreposição (Overlay)
+=============================
+*/
+
+.mob-gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente mais forte no bottom para o texto */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+    /* Garante que o overlay esteja acima da imagem */
+
+    /* Adicionado flexbox para posicionar o texto na parte inferior */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.overlay h3 {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    transform: translateY(10px);
+    /* Esconde o texto ligeiramente */
+    transition: transform 0.3s ease-in-out;
+}
+
+/*
+=============================
+  5. Efeitos de Hover
+=============================
+*/
+.mob-gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    /* Sombra com a cor roxa (var(--primary-color) se definida) */
+    box-shadow: 0 8px 25px rgba(110, 67, 200, 0.6);
+}
+
+.mob-gallery-item:hover img {
+    /* Retorna ao scale 1 (zoom out para mostrar a imagem completa) */
+    transform: scale(1);
+    object-fit: contain;
+    /* Mantém o cover para evitar barras brancas se for zoom out */
+    filter: brightness(1);
+}
+
+.mob-gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.mob-gallery-item:hover .overlay h3 {
+    transform: translateY(0);
+    /* Mostra o texto */
+    transition-delay: 0.1s;
+    /* Pequeno atraso para o texto aparecer depois do overlay */
+}
+
+
+/*===================================================================*/
+/* # 10. ESTILOS DO FOOTER */
+/*===================================================================*/
+
+.main-footer {
+    width: 100%;
+    background-color: var(--dark-bg);
+    /* Fundo bem escuro */
+    padding: 60px 0 40px 0;
+    border-top: 1px solid #333333;
+}
+
+.footer-content {
+    /* Reutiliza o container padrão de 1400px e padding lateral */
+    display: grid;
+    /* Divide em 4 colunas (30% para a marca, 20% para links, 30% para social/cta) */
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.footer-section h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--purple-highlight);
+    /* Títulos em roxo */
+}
+
+/* Marca e Informações de Copyright */
+.footer-brand .logo-text {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.brand-tagline {
+    color: var(--light-gray);
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.8em;
+}
+
+/* Lista de Links (Navegação/Recursos) */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--purple-highlight);
+    text-decoration: underline;
+}
+
+/* Redes Sociais e CTA */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3a3a3a;
+    color: var(--text-color);
+    font-size: 0.8em;
+    /* Ajuste se usar ícones reais */
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--purple-highlight);
+    transform: translateY(-3px);
+}
+
+.footer-cta-button {
+    /* Reutiliza o estilo do botão CTA roxo */
+    padding: 10px 25px;
+    font-size: 0.95em;
+    width: 100%;
+
+    text-decoration: none;
+    /* Ocupa a largura da coluna social */
+}
+
+
+/*===================================================================*/
+/* # 11. RESPONSIVIDADE (MEDIA QUERIES) - MOVIDO PARA O FINAL */
+/*===================================================================*/
+/* ================================================================ */
+/* # RESPONSIVO PARA CELULAR */
+/* ================================================================ */
+
+/*===================================================================*/
+/* # 7. RESPONSIVIDADE */
+/*===================================================================*/
+
+/*------------------------------------------------*/
+/* 1) Telas GRANDES (acima de 1400px) */
+/*------------------------------------------------*/
+@media (max-width: 950px) {
+
+    /* 🔥 Some completamente com a imagem do cover */
+    .hero-image-area,
+    .hero-image-placeholder,
+    .about-image-placeholder {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* Ajuste do GRID sem a imagem */
+    .container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto;
+        padding: 30px 20px 0;
+    }
+
+    /* Conteúdo hero ocupa 100% */
+    .hero-content {
+        grid-column: 1 / 2 !important;
+        grid-row: auto !important;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    /* Ajuste dos cards */
+    .server-cards-area {
+        flex-direction: column;
+    }
+
+    /* Highlight box agora fica embaixo */
+    .highlight-box {
+        grid-column: 1 / 2 !important;
+        margin-top: 20px;
+    }
+
+    /* ===== HEADER (mobile menu ativado) ===== */
+    .header-nav,
+    .header-right {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .header-content {
+        padding: 0 20px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-us-section {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    .about-content {
+        order: 1;
+    }
+
+    .about-image-placeholder {
+        order: 2;
+        display: none !important;
+    }
+}
+
+/*------------------------------------------------*/
+/* 3) Tablets médios e celulares grandes (até 850px) */
+/*------------------------------------------------*/
+@media (max-width: 850px) {
+
+    /* Mostra o botão hamburger */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Some com a navbar desktop */
+    .header-nav,
+    .header-right {
+        display: none;
+    }
+
+    /* Centraliza header */
+    .header-content {
+        justify-content: center;
+    }
+
+    .header-left {
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .cta-bar {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .highlight-box {
+        padding: 25px;
+    }
+
+    .highlight-box h3 {
+        font-size: 1.4em;
+    }
+}
+
+/*------------------------------------------------*/
+/* 4) Celulares (até 600px) */
+/*------------------------------------------------*/
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    .header-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1em;
+    }
+
+    .cta-bar {
+        padding: 8px 12px;
+    }
+
+    .cta-button {
+        padding: 5px 12px;
+    }
+
+    .hero-image-placeholder {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .server-card {
+        padding: 20px;
+    }
+
+    .highlight-box {
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 2em;
+    }
+
+    .about-image-placeholder {
+        height: 250px;
+    }
+}
+
+/*------------------------------------------------*/
+/* 5) Celulares muito pequenos (até 420px) */
+/*------------------------------------------------*/
+@media (max-width: 420px) {
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .cta-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .highlight-box h3 {
+        font-size: 1.3em;
+    }
+}

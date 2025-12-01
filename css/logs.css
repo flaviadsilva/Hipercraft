@@ -1,0 +1,73 @@
+.logs-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-logs {
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area-logs {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.area-logs h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    border-left: 4px solid var(--purple-highlight);
+    padding-left: 15px;
+}
+
+.log-card-logs {
+    width: 100%;
+    background-color: var(--card-bg);
+    /* Fundo igual ao corpo */
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* 4. RESPONSIVIDADE ESPECÍFICA DE LOGS (Integração com 768px ou menos) */
+
+@media (max-width: 768px) {
+    .full-changelog-area .log-card {
+        flex-direction: column;
+        /* Empilha no mobile */
+        border-left: none;
+        border-top: 5px solid var(--purple-highlight);
+        /* Destaque no topo */
+    }
+
+    .full-changelog-area .log-version {
+        flex: auto;
+        text-align: left;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .full-changelog-area .log-details {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .main-log-title {
+        font-size: 2.2em;
+    }
+}
