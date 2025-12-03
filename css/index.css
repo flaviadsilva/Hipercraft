@@ -176,6 +176,8 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    padding: 10px;
+    
 }
 
 .dropdown-toggle {
@@ -200,21 +202,17 @@ body {
 }
 
 .dropdown-menu {
-    display: none;
-    /* Escondido por padrão */
+    display: none; /* Escondido por padrão */
     position: absolute;
     background-color: var(--cta-dark);
-    /* Fundo do menu dropdown */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    z-index: 100; /* Aumentei o z-index para garantir que fique sobre o conteúdo */
     border-radius: 5px;
     padding: 10px 0;
     top: 100%;
-    /* Abaixo do link pai */
     left: 0;
-    margin-top: 10px;
-    /* Espaço entre o link e o menu */
+    margin-top: 0px;
 }
 
 .dropdown-menu a {
@@ -257,6 +255,7 @@ body {
 
 .register-button {
     background-color: var(--text-color);
+    text-decoration: none;
     /* Fundo branco para o botão "Register now" */
     color: var(--card-bg);
     /* Texto escuro no botão branco */
@@ -964,6 +963,11 @@ body {
     width: 100%;
     max-width: 1300px;
     padding: 0 20px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* Padding horizontal para telas menores */
 }
 
