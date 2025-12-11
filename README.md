@@ -1,30 +1,31 @@
-#Hipercraft
+# Hipercraft.
 
 Seja bem-vindo ao Hipercraft, um pacote de texturas para Minecraft 1.19.4 que revitaliza as texturas de blocos e mods. Nossa missão é infundir mais vida e detalhe ao seu mundo de jogo, buscando um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
 
-📋 Índice
-Sobre o Projeto
-Demonstração
-Funcionalidades
-Tecnologias Utilizadas
-Pré-requisitos
-Instalação
-Como Usar
-Estrutura de Pastas
-Roadmap
-Contribuindo
-Licença
-Contato
-Agradecimentos
+# 📋 Índice.
+• Sobre o Projeto
+• Demonstração
+• Funcionalidades
+• Tecnologias Utilizadas
+• Pré-requisitos
+• Instalação
+• Como Usar
+• Estrutura de Pastas
+• Roadmap
+• Contribuindo
+• Licença
+• Contato
+• Agradecimentos
 
-🎯 Sobre o Projeto
+# 🎯 Sobre o Projeto.
 O Hipercraft é um pacote de recursos (resource pack) focado em aprimoramento visual. Não se trata de uma mudança radical, mas sim de um polimento cuidadoso, elevando a qualidade e a vivacidade das texturas existentes no jogo base e em mods populares. Buscamos um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
 Por que este projeto foi criado?
 Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o objetivo de aplicar conhecimentos práticos em edição gráfica e estrutura de pacotes de recursos do Minecraft, criando uma aplicação completa e funcional que resolva a busca por um pack sutilmente melhorado e compatível com OptiFine.
 
-🎬 Demonstração
+# 🎬 Demonstração.
  Ou assista ao vídeo de demonstração no canal:<a href=" https://youtu.be/tAu4G1aNeOE">Hipercraft</a>
-⚙️ Funcionalidades
+
+# ⚙️ Funcionalidades.
 ✅ Texturas de Blocos Aprimoradas - Revisão de texturas de blocos vanilla para maior profundidade e detalhe.
 ✅ Melhoria em Texturas de Mods - Foco inicial em mods populares, para garantir consistência visual em todo o mundo.
 ✅ Suporte OptiFine - Texturas Conectadas (CTM) - Para uma transição suave entre blocos do mesmo tipo (vidro, estantes, etc.).
@@ -32,7 +33,7 @@ Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o 
 ✅ Animações de Bloco Customizadas - Animações suaves de blocos via OptiFine.
 🔄 Texturização de Itens e Armaduras Vanilla (em desenvolvimento)
 
-🚀 Tecnologias Utilizadas
+# 🚀 Tecnologias Utilizadas.
 Este projeto foi desenvolvido com as seguintes tecnologias:
 Software de Modelagem e Edição Gráfica:
 Block Bench: Para modelagem 3D e animação de modelos de blocos e entidades customizadas (via OptiFine).
@@ -46,25 +47,27 @@ Bibliotecas e Recursos Externos
 Minecraft Java Edition 1.19.4 - Plataforma base do projeto.
 OptiFine - Ferramenta essencial para recursos avançados (CTM, Céus Personalizados).
 
-📦 Pré-requisitos
+# 📦 Pré-requisitos.
 Antes de começar, você vai precisar ter instalado em sua máquina:
 Minecraft Java Edition (Versão 1.19.4) - O jogo base necessário.
 OptiFine (Versão compatível com 1.19.4) instalado. - Essencial para ativar os recursos avançados do pack.
 
-🔧 Instalação
+# 🔧 Instalação.
 Siga estas etapas para configurar o projeto localmente:
-Bash
+```Bash
 # Baixe o arquivo ZIP do pacote de texturas Hipercraft
 (Link de download)
-
+```
+```Bash
 # Abra a pasta do Minecraft Resource Packs
 Vá para Opções... -> Pacotes de Recursos... -> Clique em Abrir Pasta de Pacotes de Recursos.
-
+```
+```Bash
 # Arraste o arquivo ZIP baixado para essa pasta. 
 Não descompacte o arquivo!
+```
 
-
-💻 Como Usar
+# 💻 Como Usar.
 Navegação Básica
 Uma vez instalado e ativado, o pacote Hipercraft substitui automaticamente as texturas padrão e as de mods que foram aprimoradas.
 Verificação de Mods: Se você estiver usando mods, certifique-se de que eles estão na lista de mods suportados pelo Hipercraft.
@@ -94,7 +97,7 @@ seu-projeto/
         │
         ├── pack.mcmeta   # Metadados do pacote
         └── pack.png      # Ícone do pacote
-
+```
 
 🗺️ Roadmap
 Fase
