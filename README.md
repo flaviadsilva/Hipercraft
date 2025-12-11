@@ -3,19 +3,19 @@
 Seja bem-vindo ao Hipercraft, um pacote de texturas para Minecraft 1.19.4 que revitaliza as texturas de blocos e mods. Nossa missão é infundir mais vida e detalhe ao seu mundo de jogo, buscando um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
 
 # 📋 Índice.
-• Sobre o Projeto
-• Demonstração
-• Funcionalidades
-• Tecnologias Utilizadas
-• Pré-requisitos
-• Instalação
-• Como Usar
-• Estrutura de Pastas
-• Roadmap
-• Contribuindo
-• Licença
-• Contato
-• Agradecimentos
+* Sobre o Projeto
+* Demonstração
+* Funcionalidades
+* Tecnologias Utilizadas
+* Pré-requisitos
+* Instalação
+* Como Usar
+* Estrutura de Pastas
+* Roadmap
+* Contribuindo
+* Licença
+* Contato
+* Agradecimentos
 
 # 🎯 Sobre o Projeto.
 O Hipercraft é um pacote de recursos (resource pack) focado em aprimoramento visual. Não se trata de uma mudança radical, mas sim de um polimento cuidadoso, elevando a qualidade e a vivacidade das texturas existentes no jogo base e em mods populares. Buscamos um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
@@ -23,15 +23,15 @@ Por que este projeto foi criado?
 Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o objetivo de aplicar conhecimentos práticos em edição gráfica e estrutura de pacotes de recursos do Minecraft, criando uma aplicação completa e funcional que resolva a busca por um pack sutilmente melhorado e compatível com OptiFine.
 
 # 🎬 Demonstração.
- Ou assista ao vídeo de demonstração no canal:<a href=" https://youtu.be/tAu4G1aNeOE">Hipercraft</a>
+ Ou assista ao vídeo de demonstração no canal: <a href="https://youtu.be/tAu4G1aNeOE">Hipercraft</a> 
 
 # ⚙️ Funcionalidades.
-✅ Texturas de Blocos Aprimoradas - Revisão de texturas de blocos vanilla para maior profundidade e detalhe.
-✅ Melhoria em Texturas de Mods - Foco inicial em mods populares, para garantir consistência visual em todo o mundo.
-✅ Suporte OptiFine - Texturas Conectadas (CTM) - Para uma transição suave entre blocos do mesmo tipo (vidro, estantes, etc.).
-✅ Suporte a Shaders e Iluminação - Otimização para funcionar bem com shaders populares.
-✅ Animações de Bloco Customizadas - Animações suaves de blocos via OptiFine.
-🔄 Texturização de Itens e Armaduras Vanilla (em desenvolvimento)
+* ✅ Texturas de Blocos Aprimoradas - Revisão de texturas de blocos vanilla para maior profundidade e detalhe.
+* ✅ Melhoria em Texturas de Mods - Foco inicial em mods populares, para garantir consistência visual em todo o mundo.
+* ✅ Suporte OptiFine - Texturas Conectadas (CTM) - Para uma transição suave entre blocos do mesmo tipo (vidro, estantes, etc.).
+* ✅ Suporte a Shaders e Iluminação - Otimização para funcionar bem com shaders populares.
+* ✅ Animações de Bloco Customizadas - Animações suaves de blocos via OptiFine.
+* 🔄 Texturização de Itens e Armaduras Vanilla (em desenvolvimento)
 
 # 🚀 Tecnologias Utilizadas.
 Este projeto foi desenvolvido com as seguintes tecnologias:
@@ -69,7 +69,7 @@ Não descompacte o arquivo!
 
 # 💻 Como Usar.
 Navegação Básica
-Uma vez instalado e ativado, o pacote Hipercraft substitui automaticamente as texturas padrão e as de mods que foram aprimoradas.
+. Uma vez instalado e ativado, o pacote Hipercraft substitui automaticamente as texturas padrão e as de mods que foram aprimoradas.
 Verificação de Mods: Se você estiver usando mods, certifique-se de que eles estão na lista de mods suportados pelo Hipercraft.
 Interaja com os elementos interativos (botões, formulários, etc.) - (Adaptação: Interaja com as Configurações do OptiFine)
 Configurações do OptiFine: Para aproveitar todas as funcionalidades (CTM, céus personalizados), certifique-se de que as opções gráficas do OptiFine com Texturas Conectadas, Objetos Personalizados e Céu Personalizado estejam ativadas.
@@ -99,22 +99,22 @@ seu-projeto/
         └── pack.png      # Ícone do pacote
 ```
 
-🗺️ Roadmap
-Fase
-Objetivo
-Status
-Estrutura Base
-Lançamento inicial (Blocos vanilla + vaca, ovelha e galinha)
-Concluído
-Texturização de Itens
-itens, armaduras e blocos
-Concluído
-Testes Cross-Mod/Versão
-Testes de compatibilidade com outros mods/versões
-A Planejar
+# 🗺️ Roadmap.
+* Fase
+* Objetivo
+* Status
+* Estrutura Base
+* Lançamento inicial (Blocos vanilla + vaca, ovelha e galinha)
+* Concluído
+* Texturização de Itens
+* itens, armaduras e blocos
+* Concluído
+* Testes Cross-Mod/Versão
+* Testes de compatibilidade com outros mods/versões
+* A Planejar
 
 
-🤝 Contribuindo
+# 🤝 Contribuindo.
 Contribuições são sempre bem-vindas! Se você tem alguma sugestão para melhorar este projeto, siga estas etapas:
 Faça um fork do projeto
 Crie uma branch para sua feature (git checkout -b feature/NovaFuncionalidade)
@@ -126,11 +126,11 @@ Abra um Pull Request
 Código de Conduta
 Este projeto adota um código de conduta para garantir um ambiente acolhedor. Por favor, seja respeitoso e construtivo em todas as interações.
 
-✉️ Contato
-Hipercraft - hipercraft9@gmail.com
-Link do Projeto: https://github.com/flaviadsilva/Hipercraft.git
+# ✉️ Contato.
+* Hipercraft - hipercraft9@gmail.com
+* Link do Projeto: https://github.com/flaviadsilva/Hipercraft.git
 
-🎓 Agradecimentos
+# 🎓 Agradecimentos.
 Comunidade Minecraft
 Desenvolvedores do OptiFine
 Ferramentas de Edição Gráfica
