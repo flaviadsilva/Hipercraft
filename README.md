@@ -1,5 +1,5 @@
-# HiperCraft_front
-Hipercraft.
+#Hipercraft
+
 Seja bem-vindo ao Hipercraft, um pacote de texturas para Minecraft 1.19.4 que revitaliza as texturas de blocos e mods. Nossa missão é infundir mais vida e detalhe ao seu mundo de jogo, buscando um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
 
 📋 Índice
@@ -22,9 +22,8 @@ O Hipercraft é um pacote de recursos (resource pack) focado em aprimoramento vi
 Por que este projeto foi criado?
 Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o objetivo de aplicar conhecimentos práticos em edição gráfica e estrutura de pacotes de recursos do Minecraft, criando uma aplicação completa e funcional que resolva a busca por um pack sutilmente melhorado e compatível com OptiFine.
 
-🎬 Demonstração <p>
-   Ou assista ao vídeo de demonstração: <a href="https://www.youtube.com/user/HiperCraftGames"> no canal HiperCraft</a>.
-</p>
+🎬 Demonstração
+ Ou assista ao vídeo de demonstração no canal:<a href=" https://youtu.be/tAu4G1aNeOE">Hipercraft</a>
 ⚙️ Funcionalidades
 ✅ Texturas de Blocos Aprimoradas - Revisão de texturas de blocos vanilla para maior profundidade e detalhe.
 ✅ Melhoria em Texturas de Mods - Foco inicial em mods populares, para garantir consistência visual em todo o mundo.
@@ -32,7 +31,6 @@ Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o 
 ✅ Suporte a Shaders e Iluminação - Otimização para funcionar bem com shaders populares.
 ✅ Animações de Bloco Customizadas - Animações suaves de blocos via OptiFine.
 🔄 Texturização de Itens e Armaduras Vanilla (em desenvolvimento)
- <img src="img/image.png" alt="SITE">
 
 🚀 Tecnologias Utilizadas
 Este projeto foi desenvolvido com as seguintes tecnologias:
@@ -78,21 +76,24 @@ Edite as texturas dentro da pasta assets/minecraft/textures/
 Edite os arquivos de configuração do OptiFine dentro de assets/minecraft/optifine/
 Configurando o Formulário de Contato - (Esta funcionalidade não se aplica a um Texture Pack.)
 
-📁 Estrutura de Pastas
+# 📁 Estrutura de Pastas
+
+```bash
 seu-projeto/
 │
-├── Hipercraft.zip             # Arquivo do pacote de texturas
-├── LICENSE                    # Licença do projeto
+├── Hipercraft.zip        # Arquivo do pacote de texturas
+├── LICENSE               # Licença do projeto
 │
-├── assets/                    # Recursos estáticos
-│   ├── minecraft/            # Pasta padrão do vanilla
-│   │   ├── textures/         # Texturas vanilla: blocos, itens, etc.
-│   │   ├── optifine/         # Arquivos OptiFine: CTM, luzes personalizadas, etc.
-│   │   └── ...
-│   └── (nome_do_mod)/        # Texturas de mods
-│
-├── pack.mcmeta                # Metadados do pacote
-└── pack.png                   # Ícone do pacote
+└── assets/               # Recursos estáticos
+    │
+    └── minecraft/        # Pasta padrão do vanilla
+        │
+        ├── textures/     # Texturas (vanilla, blocos, itens, etc.)
+        │
+        ├── optifine/     # Arquivos OptiFine (CTM, luzes personalizadas, etc.)
+        │
+        ├── pack.mcmeta   # Metadados do pacote
+        └── pack.png      # Ícone do pacote
 
 
 🗺️ Roadmap
@@ -123,8 +124,8 @@ Código de Conduta
 Este projeto adota um código de conduta para garantir um ambiente acolhedor. Por favor, seja respeitoso e construtivo em todas as interações.
 
 ✉️ Contato
-Hipercraft - hipercraft9@gmil.com
-Link do Projeto: <a href="https://github.com/flaviadsilva/Hipercraft.git" > </a>.
+Hipercraft - hipercraft9@gmail.com
+Link do Projeto: https://github.com/flaviadsilva/Hipercraft.git
 
 🎓 Agradecimentos
 Comunidade Minecraft
