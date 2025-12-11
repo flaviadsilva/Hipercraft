@@ -1,6 +1,7 @@
 # Hipercraft.
 
 Seja bem-vindo ao Hipercraft, um pacote de texturas para Minecraft 1.19.4 que revitaliza as texturas de blocos e mods. Nossa missão é infundir mais vida e detalhe ao seu mundo de jogo, buscando um equilíbrio entre o estilo clássico do Minecraft e um visual mais detalhado e imersivo.
+  <img src="img/image.png" alt="Site">
 
 # 📋 Índice.
 * Sobre o Projeto
@@ -24,6 +25,7 @@ Este projeto foi desenvolvido como um esforço de uma equipe de 4 pessoas com o 
 
 # 🎬 Demonstração.
  Ou assista ao vídeo de demonstração no canal: <a href="https://youtu.be/tAu4G1aNeOE">Hipercraft</a> 
+
 
 # ⚙️ Funcionalidades.
 * ✅ Texturas de Blocos Aprimoradas - Revisão de texturas de blocos vanilla para maior profundidade e detalhe.
