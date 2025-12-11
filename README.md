@@ -81,7 +81,7 @@ Edite as texturas dentro da pasta assets/minecraft/textures/
 Edite os arquivos de configuração do OptiFine dentro de assets/minecraft/optifine/
 Configurando o Formulário de Contato - (Esta funcionalidade não se aplica a um Texture Pack.)
 
-# 📁 Estrutura de Pastas
+# 📁 Estrutura de Pastas.
 
 ```bash
 seu-projeto/
@@ -133,11 +133,16 @@ Este projeto adota um código de conduta para garantir um ambiente acolhedor. Po
 * Link do Projeto: https://github.com/flaviadsilva/Hipercraft.git
 
 # 🎓 Agradecimentos.
-Comunidade Minecraft
-Desenvolvedores do OptiFine
-Ferramentas de Edição Gráfica
-Unsplash - Imagens gratuitas
-Stack Overflow - Comunidade de desenvolvedores
-Colegas de turma que contribuíram com feedback
-Gostaríamos de agradecer à comunidade Minecraft, aos desenvolvedores do OptiFine, e a todos os usuários que nos deram feedback e suporte durante o desenvolvimento do Hipercraft.
+* Gostaríamos de expressar nossa profunda gratidão a todos que contribuíram e apoiaram o desenvolvimento do Hipercraft:
+* Comunidade Minecraft: Pelo entusiasmo e suporte contínuo.
+* Desenvolvedores do OptiFine: Pela ferramenta essencial que tornou o projeto possível.
+* [Jefferson]: Por sua valiosa instrução e orientação durante o desenvolvimento.
+* [SãoLucas]: Pelo fundamental suporte educacional e recursos fornecidos.
+* Stack Overflow: Pela inestimável comunidade de desenvolvedores e soluções.
+* Colegas de turma: Pelos feedbacks construtivos e por desenvolverem conosco.
+* Ferramentas de Design:
+* Unsplash: Por fornecer imagens gratuitas de alta qualidade.
+* Font Awesome: Pelos ícones usados em nosso projeto.
+* A todos os usuários que nos deram feedback e suporte durante o desenvolvimento do Hipercraft.
+# 
 ⌨️ com ❤️ por Grupo Hipercraft 🚀
