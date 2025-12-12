@@ -1432,3 +1432,80 @@ body {
         font-size: 1.3em;
     }
 }
+
+/* ================================================================ */
+/* # FOOTER RESPONSIVO — TELAS ATÉ 600px */
+/* ================================================================ */
+@media (max-width: 600px) {
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .footer-content-itens {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .footer-section h4 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .footer-links ul li a {
+        font-size: 0.95em;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-icons a {
+        width: 38px;
+        height: 38px;
+        font-size: 0.8em;
+    }
+
+    .footer-cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 1em;
+    }
+
+    .footer-img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .footer-img img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .footer-brand .logo-text {
+        font-size: 1.3em;
+    }
+
+    .brand-tagline {
+        font-size: 0.9em;
+    }
+
+    .copyright {
+        font-size: 0.75em;
+        margin-top: 10px;
+    }
+}
+    
